@@ -23,11 +23,19 @@ class Treasure {
   drawTreasure() {
     const height = this.canvas.height
     const width = this.canvas.width      
-    //console.log(height, width)
 
     this.imageTreasure.addEventListener('load',()=>{
-      this.context.drawImage(this.imageTreasure, this.col * height/10, this.row * width/10, height/10 ,width/10);      
-    })      
+      this.context.drawImage(this.imageTreasure, 
+        this.col * height/10, 
+        this.row * width/10, 
+        height/10 ,
+        width/10);       
+    })  
+    this.context.drawImage(this.imageTreasure, 
+      this.col * height/10, 
+      this.row * width/10, 
+      height/10 ,
+      width/10);    
   }
 
   foundIt() {

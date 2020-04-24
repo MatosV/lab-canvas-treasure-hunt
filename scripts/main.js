@@ -12,6 +12,7 @@ const player = new Character(0,0,$canvas, context)
 const treasure = new Treasure($canvas, context)
 
 function drawEverything() {
+  
 
   // CLEAN OLD PX
   context.clearRect(0, 0, width, height )
@@ -21,18 +22,18 @@ function drawEverything() {
   
   // CHARACTER
   // (0,0) = Initial position
-  player.drawPlayer();   
-
+  player.drawPlayer();  
+  
   player.moveUp();
   player.moveDown();  
   player.moveRight();    
   player.moveLeft()
 
+  //player.limits();
+
   // TREASURE
   treasure.drawTreasure();
-  treasure.foundIt();
-
-    
+  treasure.foundIt();    
 }
 
 drawEverything();

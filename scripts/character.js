@@ -51,7 +51,6 @@
   moveLeft() {
     this.col-=1;
   }
-
 }
 
 
