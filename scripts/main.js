@@ -14,7 +14,6 @@ const treasure = new Treasure($canvas, context)
 function drawEverything() {
 
   // CLEAN OLD PX
-
   context.clearRect(0, 0, width, height )
 
   // BACKGROUND
