@@ -44,6 +44,14 @@
       this.context.drawImage(this.imagePlayerUp, this.col * width/10,this.row * height / 10,height/10 ,width/10)
     })
     
+      if (this.row === 0) {
+        return 'no more grid...no more gird'
+      }
+      else {
+        this.row--
+    }
+  }
+    
     /* funcao a parte
 
     if (event.keyCode === 38){
@@ -65,7 +73,7 @@
     }
 
     */
-  }
+  
 
   moveDown() {
 
@@ -75,6 +83,16 @@
     this.imagePlayerUp.addEventListener('load',()=>{
       this.context.drawImage(this.imagePlayerUp, this.col * width/10,this.row * height / 10,height/10 ,width/10)
     })
+    
+      if (this.row === 10) {
+        return 'end of grid'
+      }
+      else {
+        this.row++
+      }
+    }
+
+    
     
     /* funcao a parte 
 
@@ -98,7 +116,7 @@
     
     */ 
 
-  }
+  
  
   moveRight() {
 
@@ -108,6 +126,15 @@
     this.imagePlayerUp.addEventListener('load',()=>{
       this.context.drawImage(this.imagePlayerUp, this.col * width/10,this.row * height / 10,height/10 ,width/10)
     })
+
+    if (this.col === 10) {
+      return 'end of grid'
+    }
+    else {
+      this.col++
+    }
+  }    
+  
 
     /* funcao a parte
 
@@ -131,7 +158,7 @@
 
     */
 
-  }
+  
   
   moveLeft() {
 
@@ -141,6 +168,15 @@
     this.imagePlayerUp.addEventListener('load',()=>{
       this.context.drawImage(this.imagePlayerUp, this.col * width/10,this.row * height / 10,height/10 ,width/10)
     })
+    
+    if (this.col === 0) {
+      return 'end of grid'
+    }
+    else {
+      this.col--
+    }
+  }
+}
 
     /* funcao a parte
 
@@ -164,26 +200,38 @@
 
     */
 
-  }
-}
-
 // Treasure()
   class Treasure {
     constructor (col, row, canvas) {
       this.col = col;
       this.row = row;
+
       this.canvas = canvas
       this.context = this.canvas.getContext('2d')
+
       this.imageTreasure = new Image();
       this.imageTreasure.src = './images/treasure.png';
     }
 
+    randomTreasurePosition() {
+      this.col = Math.floor(Math.random() * 10)
+      this.row = Math.floor(Math.random() * 10)
+    }
+
     drawTreasure() {
       const height = this.canvas.height
-      const width = this.canvas.width
+      const width = this.canvas.width      
       console.log(height, width)
+
       this.imageTreasure.addEventListener('load',()=>{
         this.context.drawImage(this.imageTreasure, this.col * height/10, this.row * width/10, height/10 ,width/10);      })
+    }
+  }
+
+  function iFoundIt() {
+    if(player.col === treasure.col && player.row === treasure.row) {
+      iFoundIt()
+      console.log("Work like a captain, play like a pirate...")
     }
   }
 

@@ -1,4 +1,25 @@
+window.addEventListener('keydown', (event) => {
+  // Stop the default behavior (moving the screen to the left/up/right/down)
+  event.preventDefault();
 
+  // React based on the key pressed
+  switch (event.keyCode) {
+    case 37:
+      console.log('left');
+      break;
+    case 38:
+      console.log('up');
+      break;
+    case 39:
+      console.log('right');
+      break;
+    case 40:
+      console.log('down');
+      break;
+  }
+});
+
+/*
 
 playerMovement.addEventListener('keydown', (event) => {
   for (let i=0; i<event.length; i++){
@@ -34,3 +55,5 @@ playerMovement.addEventListener('keydown', (event) => {
     }
   }
 });
+
+*/

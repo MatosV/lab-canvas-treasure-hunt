@@ -9,7 +9,8 @@ const height = $canvas.height;
 //create treasure and player
 
 const player = new Character(0,0,$canvas, context)
-const treasure = new Treasure(2,7,$canvas)
+const treasure = new Treasure(0,0,$canvas)
+treasure.randomTreasurePosition();
 
 function drawGrid() {
   context.beginPath();
@@ -41,6 +42,7 @@ function drawEverything() {
 
   // => 1,2
   treasure.drawTreasure();
+  treasure.iFoundIt();
 
 }
 
